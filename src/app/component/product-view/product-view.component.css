@@ -1,0 +1,57 @@
+.container-fluid {
+  background-color: black;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-4,
+.col-lg-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.col-md-2,
+.col-lg-2 {
+  flex: 0 0 16.6667%;
+  max-width: 16.6667%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .col-md-2,
+  .col-lg-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.cart {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+.cart-img {
+  width: 100%;
+  height: 200px; /* تعيين الارتفاع المطلوب هنا */
+  object-fit: cover; /* تأكد من عدم تشوه الصورة */
+}
+
+h6 {
+  text-decoration: none;
+}
+
+.font-weight-semibold {
+  font-weight: 600;
+}
+
+.btn {
+  margin-top: 10px;
+}

@@ -1,0 +1,34 @@
+<!-- <div class="navbar bg-dark" >
+   
+            <div class="container-fluid">
+                <a  class="navbar-brand" style="color: white;font-size: 23px;"> E-commerce Website</a>
+                <button routerLink="/" class="btn btn-warning">BACK</button>
+            </div>
+        </div> -->
+   
+<div class="container" >
+    <div class="row product-detail">
+        <div class="col-sm-3" >
+
+                        <img routerLink="/product-detail" src="{{productdata?.images[0]}}" class="cart-img img-fluid" style="width: 100%; height: 400px;">
+                   <div>
+                    <button class="btn btn-primary">Buy Now</button>&nbsp;
+                    <button (click)="addtocart(productdata)" *ngIf="showadd" class="btn btn-success">Add to cart</button>&nbsp;
+                    <button (click)="removeitem(productdata)" *ngIf="showremove" class="btn btn-info">Remove Item</button>
+                   </div>
+                    </div>
+                
+<div class="col-sm-8">
+    <div >
+        <h1>{{productdata?.title}} </h1>
+        <p style="color: green;">Special Price</p>
+        <h3>Price:${{productdata?.price}}</h3>
+        <strong>Category:{{productdata?.category}}</strong><br>
+        <strong>Description</strong><br>
+        <p>{{productdata?.description}}</p>
+        <p style="color: green;">Discount:{{productdata?.discountPercentage}} %</p><br>
+        <strong>Stocks:{{productdata?.stock}} Units Left</strong>
+    </div>
+</div>
+</div>
+</div>
