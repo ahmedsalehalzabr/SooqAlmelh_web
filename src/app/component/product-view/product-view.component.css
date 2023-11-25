@@ -1,25 +1,59 @@
-.container-fluid {
-  background-color: black;
-  padding: 20px;
+.animate-left {
+  animation: slideLeft 0.5s ease-in-out;
+}
+
+.animate-right {
+  animation: slideRight 0.5s ease-in-out;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
+  
+}
+
+.col {
+ 
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .col-md-4,
 .col-lg-3 {
   flex: 0 0 25%;
   max-width: 25%;
-  padding: 10px;
+  padding: 0px;
   box-sizing: border-box;
 }
 .col-md-2,
 .col-lg-2 {
-  flex: 0 0 16.6667%;
-  max-width: 16.6667%;
+  flex: 0 0 20%;
+  max-width: 20%;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -40,7 +74,7 @@
 
 .cart-img {
   width: 100%;
-  height: 200px; /* تعيين الارتفاع المطلوب هنا */
+  height: 130px; /* تعيين الارتفاع المطلوب هنا */
   object-fit: cover; /* تأكد من عدم تشوه الصورة */
 }
 
@@ -53,5 +87,38 @@ h6 {
 }
 
 .btn {
-  margin-top: 10px;
+  margin-top: 0px;
+}
+ 
+
+.menu-text {
+ 
+  margin-left: 0px;
+  padding-top: 50px;
+  padding-right: 40px;
+
+}
+.row-2 {
+
+  margin-left: 210px;
+  margin-right: 210px
+  
+}
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  animation: marquee-scroll 20s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

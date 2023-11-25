@@ -1,0 +1,57 @@
+<!--
+
+
+
+<div class="container" >
+    <div class="row">
+        <div  >
+
+                        <img routerLink="/product-detail" [src]="imgUrl + category?.data?.products?.[0]?.image" class="cart-img img-fluid" style="width: 83%; height: 150px;">
+                  
+                    </div>
+                
+<div  >
+    <div >
+    
+        <button routerLink="/" type="submit"  class="btn btn-success mt-2"> <h5>Home </h5></button>&nbsp;
+        <button  type="submit"  class="btn btn-success mt-2"> <h5>Product</h5></button>&nbsp;
+
+        <button  type="submit"  class="btn btn-success mt-2"> <h5>{{category?.data?.products[0].name}} </h5></button>&nbsp;
+
+       
+    </div>
+</div>
+
+</div>
+</div>
+<div class="container" >
+    <div class="row product-detail">
+        <div class="col-sm-3" >
+
+                        <img  src="../assets/ahmed.jfif" class="cart-img img-fluid" style="width: 150%; height: 600px;">
+                  
+                    </div>
+                
+<div class="col-sm-7   beb" >
+    <div class="container-fluid"   >
+        <div class="row"style="background-color: rgb(252, 248, 249);">
+            <div class="col-md-4 col-lg-3 mt-2"  *ngFor="let item of products">
+                <div class="cart mt-2">
+                    <div class="cart-body">
+                        <div class="cart-img-action">
+                            <img routerLink="/product-detail/{{item.id}}" [src]="imgUrl + item.image" class="cart-img img-fluid">
+                        </div>
+                    </div>
+                    <div class="cart-body bg-light text-center">
+                        <div>
+                            <h6 class="font-weight-semibold">
+                                <a class="text-default" style="text-decoration: none;">{{item.name}}</a>
+                            </h6>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>  -->

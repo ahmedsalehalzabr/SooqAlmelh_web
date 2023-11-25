@@ -1,15 +1,75 @@
-<div class="container-fluid" style="background-color: black;">
-    <div class="row justify-content-center text-center">
-        <div class="col-md-8 col-lg-6">
+
+<div class="container-fluid beb"  [dir]="'dir' | translate">
+   
+    <div class="row justify-content-center align-items-center" style="background-color: #1f171d;">
+        <div class="col-md-4 col-lg-6">
             <div class="header">
-                <h3 style="color: white;font-size: 23px;"> E-commerce Products</h3>
-            </div>
-            <div style="display: flex;margin-left: 800px; justify-content: flex-end;">
-               
-                <i routerLink="cart-page" class="fas fa-shopping-cart" style="color: white; font-size: 18px; cursor: pointer;">&nbsp;{{cartitems}}</i>
-                <span style="margin-left: 10px;"></span> <!-- مسافة بسيطة بين العناصر -->
-                <i routerLink="/" class="fas fa-home" style="color: white; font-size: 18px; cursor: pointer;"></i>
-            </div>
-    </div>
-</div>
+             <!--   <h3 style="color: white; font-size: 23px;">{{ 'E-commerce Products' | translate }}</h3>-->
+                <div class="nav-search">
+                    <td><img routerLink="/" src="../assets/logoh-en.png" alt=""style="width: 100%; height: 50px;">  </td>
+                    <div class="form-group">
+                        <input type="search"  class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+                    </div>
+                    <span class="fas fa-search search-icon"></span>
+                </div>
+            </div> 
+        </div>
+        <div class="col-md-4 col-lg-6 d-flex justify-content-end">
+            <span style="margin-left: 10px;"></span>
+            <i routerLink="favorites" class="fal fa-heart" style="color: white; font-size: 18px my-20; cursor: pointer;">&nbsp;{{ favoriteitems }}</i>
+            <span style="margin-left: 10px;"></span>
+            <i routerLink="cart-page" class="fal fa-shopping-cart" style="color: white; font-size: 18px my-20; cursor: pointer;">&nbsp;{{ cartitems }}</i>
+            <span style="margin-left: 10px;"></span>
+            <i routerLink="/" class="fal fa-home" style="color: white; font-size: 18px my-20; cursor: pointer;"></i>
+            <span style="margin-left: 10px;"></span>
+            <select name="" id="" (change)="translate($event)">
+                <option value="en">English</option>
+                <option value="ar">Arabic</option>
+            </select>
+        </div>
+        <nav class="navbar navbar-expand-lg" >
+            
+              <div class="row" style="background-color: #1f171d;">
+                <div class="col">
+                  <div class="dropdown"*ngFor="let o of category" >
+                    <a  class="dropdown-toggle" (click)="toggleDropdown()"style="color: white; text-decoration: none; border-bottom: none;">
+                     {{o.name}}
+                    </a>
+                    <ul class="dropdown-menu"  [ngClass]="{'show': isDropdownOpen}">
+                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name}}</a></li> 
+                    </ul>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="dropdown"*ngFor="let o of category3">
+                    <a  class="dropdown-toggle" (click)="toggleDropdown1()" style="color: white; text-decoration: none; border-bottom: none;">
+                      {{o.name}}
+                    </a>
+                    <ul class="dropdown-menu"  [ngClass]="{'show': isDropdownOpen1}">
+                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name}}</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col">
+                    <div class="dropdown"*ngFor="let o of category4">
+                      <a routerLink="/category-detail/{{o.id}}"  style="color: white; text-decoration: none; border-bottom: none;">
+                        {{o.name}}
+                      </a>
+                    
+                    </div>
+                  </div>
+                <div class="col">
+                  <div class="dropdown"*ngFor="let o of category1" >
+                    <a  class="dropdown-toggle" (click)="toggleDropdown2()" style="color: white; text-decoration: none; border-bottom: none;">
+                      {{o.name}}
+                    </a>
+                    <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen2}">
+                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name}}</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+        
+          </nav>
+        </div>
 </div>

@@ -1,0 +1,9 @@
+.container {
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-top: 30px;
+  }
+  .form-check-label {
+    margin-left: 10px; 
+    padding-right: 10px;/* يمكنك ضبط هذا القيمة حسب المسافة التي ترغب فيها */
+  }

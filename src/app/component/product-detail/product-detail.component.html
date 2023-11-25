@@ -7,28 +7,69 @@
         </div> -->
    
 <div class="container" >
-    <div class="row product-detail">
+    <div class="row product-detail" >
         <div class="col-sm-3" >
 
-                        <img routerLink="/product-detail" src="{{productdata?.images[0]}}" class="cart-img img-fluid" style="width: 100%; height: 400px;">
-                   <div>
-                    <button class="btn btn-primary">Buy Now</button>&nbsp;
-                    <button (click)="addtocart(productdata)" *ngIf="showadd" class="btn btn-success">Add to cart</button>&nbsp;
-                    <button (click)="removeitem(productdata)" *ngIf="showremove" class="btn btn-info">Remove Item</button>
-                   </div>
+                        <img routerLink="/product-detail" [src]="imgUrl + product?.data?.image" class="cart-img img-fluid" style="width: 150%; height: 150px;">
+                  
                     </div>
                 
-<div class="col-sm-8">
+<div class="col-sm-8   beb" >
     <div >
-        <h1>{{productdata?.title}} </h1>
-        <p style="color: green;">Special Price</p>
-        <h3>Price:${{productdata?.price}}</h3>
-        <strong>Category:{{productdata?.category}}</strong><br>
-        <strong>Description</strong><br>
-        <p>{{productdata?.description}}</p>
-        <p style="color: green;">Discount:{{productdata?.discountPercentage}} %</p><br>
-        <strong>Stocks:{{productdata?.stock}} Units Left</strong>
+        <h2>{{product?.data?.name}} </h2>
+        
+        <strong>Platform:      {{product?.data?.platform?.name}}</strong><br>
+        <strong>Region:        {{product?.data?.region?.name}}</strong><br>
+       
+       
     </div>
 </div>
 </div>
+</div>
+<div class="cartbox">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th style="width:25%;">Quantity</th>
+                <th>Totle</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of product?.data?.products; let index = index">
+                <td><img [src]="imgUrl + product?.data?.image" alt=""style="width: 100%; height: 100px;">  </td>
+                <td style="vertical-align: middle; ">{{item.name}}</td>
+                <td style="vertical-align: middle; ">{{item.price}} L.E</td>
+                <td style="vertical-align: middle; ">
+                    <div class="quantity">
+        <!--                <button class="btn btn-dark" (click)="addAmount(index)">+</button>
+                        <input class="form-control" type="number" (click)="detectChange()"  min="1">
+                        <button class="btn btn-dark" (click)="minsAmount(index)">-</button>-->
+                        <button class="btn btn-dark" (click)="quantity('max')">+</button>
+                        <input class="inputbox" text="text" value="{{productquantity}}">
+                        <button class="btn btn-dark" (click)="quantity('min')">-</button>
+                    </div>
+                </td>
+                <td style="vertical-align: middle; ">{{item.price * productquantity}} L.E</td>
+             
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th> <button class="btn btn-primary">Buy Now</button>&nbsp;</th>
+                <th><button (click)="addtocart(product)" *ngIf="showadd && product" class="btn btn-success">Add to cart</button></th>
+                <th><button (click)="removeitem(product)" *ngIf="showremove && product" class="btn btn-info">Remove Item</button></th>
+                <th>Total : {{total}}</th>
+        
+            </tr>
+        </tfoot>
+    </table>
+    <div>
+        <strong>Description</strong><br>
+        <p>{{product?.data?.platform?.description}}</p>
+    </div>
 </div>

@@ -1,0 +1,41 @@
+<ng-container *ngIf="show2product.length != 0">
+    <div class="container-fluid">
+      <div class="row">
+        <div >
+        <h3>Favorites Items</h3>
+        <table class="table table-borderless mt-3">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">IMAGE</th>
+                <th scope="col">PRODUCT</th>
+                <th scope="col">PLATFORM</th>
+                <th scope="col">REGION</th>
+                <th scope="col">ACTION</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let elment of show2product">
+                <td><img style="width: 120px;" [src]="imgUrl + elment.image"> </td>
+                <td style="vertical-align: middle; ">{{elment.name}}</td>
+                <td style="vertical-align: middle; ">{{elment.platformId}}</td>
+                <td style="vertical-align: middle; ">{{elment.regionId}} </td>
+               
+                <td style="vertical-align: middle; "><button (click)="deleteelment(elment)" class="btn btn-danger">X</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  
+  </div>
+</div>
+</ng-container>
+
+<ng-container *ngIf="show2product.length == 0">
+  <div class="card">
+      <div class="center">
+          <h4>Your Favorites is Empty</h4>
+          <h6>Please Add Item</h6>
+          <button routerLink="/" class="btn btn-dark">Shop Now</button>
+      </div>
+  </div>
+</ng-container>

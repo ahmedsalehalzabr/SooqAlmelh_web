@@ -1,0 +1,77 @@
+<div class="container"  >
+    <div class="row">
+        <div  >
+
+
+                        <ng-container *ngIf="category?.data?.[0]?.banner">
+                            <img routerLink="/product-detail" [src]="imgUrl + category?.data?.[0]?.banner" class="cart-img img-fluid" style="width: 83%; height: 150px;">
+                          </ng-container>
+                          <ng-container *ngIf="!category?.data?.[0]?.banner">
+                            <h1>{{category?.data?.[0]?.name }}</h1>
+                          </ng-container>
+                    </div>
+                
+<div  >
+    <div >
+    
+        <button routerLink="/" type="submit"  class="btn btn-success mt-2"> <h5>Home </h5></button>&nbsp;
+        <button  type="submit"  class="btn btn-success mt-2"> <h5>Product</h5></button>&nbsp;
+
+        <button  type="submit"  class="btn btn-success mt-2"> <h5>{{category?.data?.[0]?.name}} </h5></button>&nbsp;
+
+       
+    </div>
+</div>
+</div>
+</div>
+<div class="container" >
+    <div class="row product-detail"  >
+        <div class="col-sm-3" style="background-color: rgb(252, 248, 249);; height: 1000px;" >
+            <h3>Region</h3>
+            <div class="form-check"*ngFor="let r of region">
+               
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  {{r.catalogCount}}
+                </label>
+                <label class="form-check-label" for="flexCheckChecked" >
+                    {{r.name}}
+                  </label>
+              </div>
+              <h3>Platform</h3>
+              <div class="form-check"*ngFor="let p of platform">
+                 
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    {{p.catalogCount}}
+                  </label>
+                  <label class="form-check-label" for="flexCheckChecked" >
+                      {{p.name}}
+                    </label>
+                </div>
+                              
+                    </div>
+                
+<div class="col-sm-7   beb" >
+    <div class="container-fluid"   >
+        <div class="row"style="background-color: rgb(252, 248, 249);">
+            <div class="col-md-4 col-lg-3 mt-2"  *ngFor="let item of products">
+                <div class="cart mt-2">
+                    <div class="cart-body">
+                        <div class="cart-img-action">
+                            <img routerLink="/product-detail/{{item.id}}" [src]="imgUrl + item.image" class="cart-img img-fluid">
+                        </div>
+                    </div>
+                    <div class="cart-body bg-light text-center">
+                        <div>
+                            <h6 class="font-weight-semibold">
+                                <a class="text-default" style="text-decoration: none;">{{item.name}}</a>
+                            </h6>
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

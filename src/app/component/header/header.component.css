@@ -1,0 +1,35 @@
+.row {
+  margin-left: 200px;
+  margin-right: 200px;
+
+}
+
+.form-group{
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+select {
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* قواعد التنسيق الأخرى التي ترغب في تطبيقها */
+  }
+  .nav-search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-search .form-group {
+    margin-right: 15px;
+  }
+  
+  .nav-search .form-control {
+    border-radius: 5px;
+  }
+  
+  .nav-search .search-icon {
+    color: gray;
+  }

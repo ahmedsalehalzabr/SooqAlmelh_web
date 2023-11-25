@@ -1,0 +1,25 @@
+<div class="container-fluid" style="background-color: rgb(252, 248, 249);">
+    <div class="row">
+      <ng-container>
+        <div class="col-md-2 col-lg-2 mt-3" *ngFor="let item of products">
+          <div class="cart mt-2">
+            <div class="cart-body">
+              <div class="cart-img-action">
+                <img routerLink="/product-detail" [src]="imgUrl + item.image" class="cart-img img-fluid">
+                <!-- قمنا بتحديث هنا: [src]="imgUrl + item.image" -->
+              </div>
+            </div>
+            <div class="cart-body bg-light text-center">
+              <div>
+                <h6 class="font-weight-semibold">
+                  <a class="text-default" style="text-decoration: none;">{{item.name}}</a>
+                </h6>
+              </div>
+              <h3 class="mb-0 font-weight-semibold">$ {{item.iso}}</h3>
+              <!--<button (click)="removeitem(item)" class="btn btn-sm btn-danger mt-2"><i class="fa fa-remove  mr-2"></i>&nbsp;Remove Item</button>-->
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
