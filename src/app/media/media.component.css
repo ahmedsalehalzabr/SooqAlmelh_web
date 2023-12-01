@@ -1,0 +1,33 @@
+.product {
+  padding: 20px 0;
+}
+.slider-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 150px;
+}
+.slider-main {
+  position: absolute;
+  width: 200%;
+ 
+}
+.item{
+  display: inline-block;
+  width: 132px;
+  height: 150px;
+
+  position: relative;
+  margin: 0 5px;
+}
+.prev{
+  position: absolute;
+  left: 33px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.next{
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,14 +1,14 @@
 
-<div class="container-fluid beb"  [dir]="'dir' | translate">
+<div class="container-fluid"  [dir]="'dir' | translate">
    
-    <div class="row justify-content-center align-items-center" style="background-color: #1f171d;">
+    <div class="row beb justify-content-center align-items-center" style="background-color: #1f171d;">
         <div class="col-md-4 col-lg-6">
             <div class="header">
              <!--   <h3 style="color: white; font-size: 23px;">{{ 'E-commerce Products' | translate }}</h3>-->
                 <div class="nav-search">
                     <td><img routerLink="/" src="../assets/logoh-en.png" alt=""style="width: 100%; height: 50px;">  </td>
                     <div class="form-group">
-                        <input type="search"  class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+                        <input type="search"  class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search Products" >
                     </div>
                     <span class="fas fa-search search-icon"></span>
                 </div>
@@ -27,33 +27,34 @@
                 <option value="ar">Arabic</option>
             </select>
         </div>
-        <nav class="navbar navbar-expand-lg" >
+    </div></div>
+        <nav class="ahmed" style="background-color: #1f171d;"[dir]="'dir' | translate">
             
-              <div class="row" style="background-color: #1f171d;">
-                <div class="col">
+              <div class="row">
+                <div class=" col-lg-1">
                   <div class="dropdown"*ngFor="let o of category" >
                     <a  class="dropdown-toggle" (click)="toggleDropdown()"style="color: white; text-decoration: none; border-bottom: none;">
-                     {{o.name}}
+                     {{o.name | translate}}
                     </a>
-                    <ul class="dropdown-menu"  [ngClass]="{'show': isDropdownOpen}">
-                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name}}</a></li> 
+                    <ul class="dropdown-menu"  [ngClass]="{'show': isDropdownOpen }">
+                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</a></li> 
                     </ul>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-2">
                   <div class="dropdown"*ngFor="let o of category3">
                     <a  class="dropdown-toggle" (click)="toggleDropdown1()" style="color: white; text-decoration: none; border-bottom: none;">
-                      {{o.name}}
+                      {{o.name | translate}}
                     </a>
                     <ul class="dropdown-menu"  [ngClass]="{'show': isDropdownOpen1}">
-                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name}}</a></li>
+                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</a></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col">
+                <div class="col-lg-2">
                     <div class="dropdown"*ngFor="let o of category4">
                       <a routerLink="/category-detail/{{o.id}}"  style="color: white; text-decoration: none; border-bottom: none;">
-                        {{o.name}}
+                        {{o.name | translate}}
                       </a>
                     
                     </div>
@@ -61,15 +62,13 @@
                 <div class="col">
                   <div class="dropdown"*ngFor="let o of category1" >
                     <a  class="dropdown-toggle" (click)="toggleDropdown2()" style="color: white; text-decoration: none; border-bottom: none;">
-                      {{o.name}}
+                      {{o.name | translate}}
                     </a>
                     <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen2}">
-                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name}}</a></li>
+                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
         
           </nav>
-        </div>
-</div>

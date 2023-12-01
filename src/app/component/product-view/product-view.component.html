@@ -7,8 +7,8 @@
         </div>
     </div>
 </div> -->
-<div class="container-fluid"   >
-    <div class="row"style="background-color: rgb(252, 248, 249);">
+<div class="container-fluid"  [dir]="'dir' | translate" >
+    <div class="row-3"style="background-color: rgb(252, 248, 249);">
         <div class="col-md-2 col-lg-2 mt-2"  *ngFor="let item of products| filter:searchKey:'name'">
             <div class="cart mt-2">
                 <div class="cart-body">
@@ -19,7 +19,7 @@
                 <div class="cart-body bg-light text-center">
                     <div>
                         <h6 class="font-weight-semibold">
-                            <a class="text-default" style="text-decoration: none;">{{item.name}}</a>
+                            <a class="text-default" style="text-decoration: none;">{{item.name | translate}}</a>
                         </h6>
                     </div>
 
@@ -32,39 +32,128 @@
     </div>
 </div>
 
- 
-<div class="row" style="background-color: rgb(252, 248, 249);">
-    <div class="menu-container"*ngFor="let o of category" style="width: 290px; height: 290px; background-image: url('{{imgUrl + o.image}}');">
-      <div class="menu-text" style="text-align: center; color: white;" *ngFor="let o of category">
-        <h2 routerLink="/category-detail/{{o.id}}"style="padding-left: 30px;">{{o.name}}</h2>
-        <ul style="text-align: center; list-style-type: none; color: white;"*ngFor="let b of o.sub" >
-          <li  routerLink="/category-detail/{{b.id}}">{{b.name}}</li>
-        </ul>
+
+  <div class="container" [dir]="'dir' | translate">
+    <div class="row ss" >
+        <div class="col-sm-3" >
+          <div class="menu-container"*ngFor="let o of category" style="width: 200px; height: 250px; background-image: url('{{imgUrl + o.image}}');">
+            <div class="menu-text" style="text-align: center; color: white;" *ngFor="let o of category">
+              <h4 routerLink="/category-detail/{{o.id}}"style="padding-left: 30px;">{{o.name | translate}}</h4>
+              <ul style="text-align: center; list-style-type: none; color: white;"*ngFor="let b of o.sub" >
+                <li  routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</li>
+              </ul>
+            </div>
+          </div>
+         </div>
+                
+<div class="col-sm-9" >
+  <section class="product">
+    <div class="container-fluid">
+      <div class="slider-wrap" >
+        <div class="slider-main" >
+          <div class="item"*ngFor="let item of products">
+            <img class="item"  [routerLink]="'/product-detail/' + item.id" [src]="imgUrl + item.image" >
+            <div>
+              <h6 class="font-weight-semibold">
+                  <a class="text-default" style="text-decoration: none;">{{item.name | translate}}</a>
+              </h6>
+          </div>
+          </div>
+          
+        </div>
+        <div class="button-area">
+          <!--<button type="button" class="prev"appPrev> Prev </button>-->
+          <button type="button" class="next"appNext> Next </button>
+
+        </div>
       </div>
     </div>
-    <div style="width: 10px; " ></div> <!-- مسافة صغيرة -->
-    <div class="menu-container"*ngFor="let o of category3" style="width: 290px; height: 290px; background-image: url('{{imgUrl + o.image}}');">
-      <div class="menu-text" style="text-align: center; color: white;" *ngFor="let o of category3">
-        <h2 routerLink="/category-detail/{{o.id}}" style="padding-left: 11px;">{{o.name}}</h2>
-        <ul style="text-align: center; list-style-type: none; color: white;"*ngFor="let b of o.sub" >
-          <li  routerLink="/category-detail/{{b.id}}">{{b.name}}</li>
-        </ul>
+  </section>
+</div>
+</div>
+</div>
+<div class="container" [dir]="'dir' | translate">
+  <div class="row ss" >
+      <div class="col-sm-3" >
+        <div class="menu-container"*ngFor="let o of category3" style="width: 200px; height: 250px; background-image: url('{{imgUrl + o.image}}');">
+          <div class="menu-text" style="text-align: center; color: white;" *ngFor="let o of category3">
+            <h4 routerLink="/category-detail/{{o.id}}" style="padding-left: 11px;">{{o.name | translate}}</h4>
+            <ul style="text-align: center; list-style-type: none; color: white;"*ngFor="let b of o.sub" >
+              <li  routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</li>
+            </ul>
+          </div>
+        </div>
+       </div>
+              
+<div class="col-sm-9   beb" >
+<section class="product">
+  <div class="container-fluid">
+    <div class="slider-wrap" >
+      <div class="slider-main" >
+        <div class="item"*ngFor="let item of products">
+          <img class="item"  [routerLink]="'/product-detail/' + item.id" [src]="imgUrl + item.image" >
+          <div>
+            <h6 class="font-weight-semibold">
+                <a class="text-default" style="text-decoration: none;">{{item.name | translate}}</a>
+            </h6>
+        </div>
+        </div>
+        
       </div>
-    </div>
-    <div style="width: 10px;"></div> <!-- مسافة صغيرة -->
-    <div class="menu-container"*ngFor="let o of category1" style="width: 290px; height: 290px; background-image: url('{{imgUrl + o.image}}');">
-      <div class="menu-text" style="text-align: center; color: white;" *ngFor="let o of category1">
-        <h2 routerLink="/category-detail/{{o.id}}" style="padding-left: 20px;">{{o.name}}</h2>
-        <ul style="text-align: center; list-style-type: none; color: white;"*ngFor="let b of o.sub" >
-          <li  routerLink="/category-detail/{{b.id}}">{{b.name}}</li>
-        </ul>
+      <div class="button-area">
+        <!--<button type="button" class="prev"appPrev> Prev </button>-->
+        <button type="button" class="next"appNext> Next </button>
+
       </div>
     </div>
   </div>
-  <div class="row-2" style="background-color: rgb(252, 248, 249);">
+</section>
+</div>
+</div>
+</div>
+<div class="container" [dir]="'dir' | translate">
+  <div class="row ss" >
+      <div class="col-sm-3" >
+        <div class="menu-container"*ngFor="let o of category1" style="width: 200px; height: 250px; background-image: url('{{imgUrl + o.image}}');">
+          <div class="menu-text" style="text-align: center; color: white;" *ngFor="let o of category1">
+            <h4 routerLink="/category-detail/{{o.id}}" style="padding-left: 20px;">{{o.name | translate}}</h4>
+            <ul style="text-align: center; list-style-type: none; color: white;"*ngFor="let b of o.sub" >
+              <li  routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</li>
+            </ul>
+          </div>
+        </div>
+       </div>
+              
+<div class="col-sm-9   beb" >
+<section class="product">
+  <div class="container-fluid">
+    <div class="slider-wrap" >
+      <div class="slider-main" >
+        <div class="item"*ngFor="let item of products">
+          <img class="item"  [routerLink]="'/product-detail/' + item.id" [src]="imgUrl + item.image" >
+          <div>
+            <h6 class="font-weight-semibold">
+                <a class="text-default" style="text-decoration: none;">{{item.name | translate}}</a>
+            </h6>
+        </div>
+        </div>
+        
+      </div>
+      <div class="button-area">
+        <!--<button type="button" class="prev"appPrev> Prev </button>-->
+        <button type="button" class="next"appNext> Next </button>
+
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+</div>
+ <!-- <div class="row-2" style="background-color: rgb(252, 248, 249);">
         <div class="marquee-container" style="background-color: rgb(252, 248, 249);" >
             <div class="marquee" >
-                <!--[ngStyle]="{'animation-duration': animationDuration}"-->
+                [ngStyle]="{'animation-duration': animationDuration}"
               <div *ngFor="let item of products">
                 <div class="cart mt-2">
                     <div class="cart-body">
@@ -80,13 +169,13 @@
                         </div>
     
                         
-                        <!--<button (click)="removeitem(item)" class="btn btn-sm btn-danger mt-2"><i class="fa fa-remove  mr-2"></i>&nbsp;Remove Item</button>-->
+                        <button (click)="removeitem(item)" class="btn btn-sm btn-danger mt-2"><i class="fa fa-remove  mr-2"></i>&nbsp;Remove Item</button>
                     </div>
                 </div>
               </div>
             </div>
           </div> </div>
-          <!--<button (click)="startMoving()">Start Moving</button>
+          <button (click)="startMoving()">Start Moving</button>
           <button (click)="stopMoving()">Stop Moving</button>
        
         <div class="row" style="background-color: rgb(252, 248, 249);">
@@ -113,3 +202,7 @@
         
         <button class="btn btn-primary" (click)="moveItems('left')">اليسار</button>
         <button class="btn btn-primary" (click)="moveItems('right')">اليمين</button> -->
+
+
+       
+      

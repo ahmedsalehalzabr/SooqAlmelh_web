@@ -26,6 +26,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { CategoryDetailsComponent } from './category-details/category-details/category-details.component';
 import { CategorySubdetailsComponent } from './category-subdetails/category-subdetails/category-subdetails.component';
+import { NextDirective } from './next.directive';
+import { PrevDirective } from './prev.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,9 @@ import { CategorySubdetailsComponent } from './category-subdetails/category-subd
       SettingsComponent,
       FavoritesComponent,
       CategoryDetailsComponent,
-      CategorySubdetailsComponent
+      CategorySubdetailsComponent,
+      NextDirective,
+      PrevDirective
   ],
   imports: [
     BrowserModule,

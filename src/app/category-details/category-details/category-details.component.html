@@ -1,10 +1,10 @@
-<div class="container"  >
-    <div class="row">
+<div class="container"  [dir]="'dir' | translate" >
+    <div class="row ss">
         <div  >
 
 
                         <ng-container *ngIf="category?.data?.[0]?.banner">
-                            <img routerLink="/product-detail" [src]="imgUrl + category?.data?.[0]?.banner" class="cart-img img-fluid" style="width: 83%; height: 150px;">
+                            <img routerLink="/product-detail" [src]="imgUrl + category?.data?.[0]?.banner" class="cart-img img-fluid" style="width: 100%; height: 150px;">
                           </ng-container>
                           <ng-container *ngIf="!category?.data?.[0]?.banner">
                             <h1>{{category?.data?.[0]?.name }}</h1>
@@ -14,19 +14,19 @@
 <div  >
     <div >
     
-        <button routerLink="/" type="submit"  class="btn btn-success mt-2"> <h5>Home </h5></button>&nbsp;
-        <button  type="submit"  class="btn btn-success mt-2"> <h5>Product</h5></button>&nbsp;
+        <button routerLink="/" type="submit"  class="btn btn-success mt-2" style="height: 35px;"> <h5>{{'Home' | translate}}</h5></button>&nbsp;
+        <button  type="submit"  class="btn btn-success mt-2"style="height: 35px;"> <h5>{{'Product' | translate}}</h5></button>&nbsp;
 
-        <button  type="submit"  class="btn btn-success mt-2"> <h5>{{category?.data?.[0]?.name}} </h5></button>&nbsp;
+        <button  type="submit"  class="btn btn-success mt-2"style="height: 35px;"> <h5>{{category?.data?.[0]?.name }} </h5></button>&nbsp;
 
-       
+        
     </div>
 </div>
 </div>
 </div>
-<div class="container" >
-    <div class="row product-detail"  >
-        <div class="col-sm-3" style="background-color: rgb(252, 248, 249);; height: 1000px;" >
+<div class="container"  [dir]="'dir' | translate">
+    <div class="row ss"  >
+        <div class="col-sm-4" style="background-color: rgb(252, 248, 249); height: 1100px;" >
             <h3>Region</h3>
             <div class="form-check"*ngFor="let r of region">
                
@@ -35,8 +35,12 @@
                   {{r.catalogCount}}
                 </label>
                 <label class="form-check-label" for="flexCheckChecked" >
-                    {{r.name}}
+                    {{r.name | translate}}
                   </label>
+              </div>
+              <div class="reset">
+                <button  type="submit"  class="btn btn-success mt-2" style="height: 30px;"> <h6>Reset </h6></button>&nbsp;
+                <button  type="submit"  class="btn btn-success mt-2" style="height: 30px;"> <h6>Submit</h6></button>&nbsp;
               </div>
               <h3>Platform</h3>
               <div class="form-check"*ngFor="let p of platform">
@@ -46,14 +50,17 @@
                     {{p.catalogCount}}
                   </label>
                   <label class="form-check-label" for="flexCheckChecked" >
-                      {{p.name}}
+                    {{p.name }}
                     </label>
                 </div>
-                              
+                <div class="reset">
+                    <button  type="submit"  class="btn btn-success mt-2" style="height: 30px;"> <h6>Reset </h6></button>&nbsp;
+                    <button  type="submit"  class="btn btn-success mt-2" style="height: 30px;"> <h6>Submit</h6></button>&nbsp;
+                  </div>      
                     </div>
                 
-<div class="col-sm-7   beb" >
-    <div class="container-fluid"   >
+<div class="col-sm-8" >
+    <div class="container"   >
         <div class="row"style="background-color: rgb(252, 248, 249);">
             <div class="col-md-4 col-lg-3 mt-2"  *ngFor="let item of products">
                 <div class="cart mt-2">
@@ -65,7 +72,7 @@
                     <div class="cart-body bg-light text-center">
                         <div>
                             <h6 class="font-weight-semibold">
-                                <a class="text-default" style="text-decoration: none;">{{item.name}}</a>
+                                <a class="text-default" style="text-decoration: none;">{{item.name | translate}}</a>
                             </h6>
                         
                 </div>
@@ -75,3 +82,4 @@
 </div>
 </div>
 </div>
+    </div></div>

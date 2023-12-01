@@ -34,7 +34,7 @@ toggleDropdown1() {
   
 }
 toggleDropdown2() {
- ;
+ 
   this.isDropdownOpen2 = !this.isDropdownOpen2;
   
 }

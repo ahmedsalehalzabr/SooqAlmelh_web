@@ -28,6 +28,9 @@ export class ApiService {
  private apiUrl6 = 'https://api.sooqalmelh.app/api/Platform';
  private apiUrl7 = 'https://api.sooqalmelh.app/api/Region';
   
+ getCatalogsByFilter(param: any): Observable<Product> {
+  return this.http.post<Product>(`${this.apiUrl}Catalog`, param);
+}
  getProducts(): Observable<Product[]> {
   return this.http.get<Product[]>(this.apiUrl);
 }
