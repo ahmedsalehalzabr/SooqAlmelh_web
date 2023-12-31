@@ -1,0 +1,54 @@
+<div class="login d-flex justify-content-center align-items-center m-auto"style="background-color: red;height: 1000px;">
+    
+    <div class="row">
+        <div class="col-md-6 p-0">
+            <div class="overlay"></div>
+            <img src="../../../../assets/desola-lanre-ologun-zYgV-NGZtlA-unsplash.jpg" alt="">
+        </div>
+        <div class="col-md-6">
+         <div class="h-100 d-flex align-items-center justify-content-center w-100">
+            <div class="box w-75">
+                <h2>Login </h2>
+             
+        
+                <form [formGroup]!="loginForm">
+                    <div appearance="outline" class="w-100">
+                        <div>Email</div>
+                        <input matInput formControlName="email"  placeholder="email">
+                        <div>required</div>
+                    </div>
+                    <div appearance="outline" class="w-100">
+                        <div>Password</div>
+                        <input matInput formControlName="password" type="password" placeholder="password">
+                        <div>required</div>
+        
+                    </div>
+                </form>
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  </div>
+                  <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <div class="d-flex justify-content-center">
+                    <button   mat-raised-button color="warn" (click)="login()">Login</button>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a routerLink="/auth/register">Create Account ? </a>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+ 
+</div>

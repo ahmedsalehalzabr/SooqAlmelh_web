@@ -28,6 +28,7 @@ import { CategoryDetailsComponent } from './category-details/category-details/ca
 import { CategorySubdetailsComponent } from './category-subdetails/category-subdetails/category-subdetails.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { PrevDirective } from './prev.directive';
       CategoryDetailsComponent,
       CategorySubdetailsComponent,
       NextDirective,
-      PrevDirective
+      PrevDirective,
+  
   ],
   imports: [
     BrowserModule,

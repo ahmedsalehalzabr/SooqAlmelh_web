@@ -18,7 +18,7 @@ export class CartPageComponent implements OnInit {
   productquantity:number=1;
   constructor(private api:ApiService) {}
   ngOnInit(): void {
-    this.api.products().subscribe(res=>{
+    this.api.products().subscribe(res=>{ 
       this.showproduct2 = res;
       this.totalamount = this.api.calculateprice();
       console.log(this.showproduct)

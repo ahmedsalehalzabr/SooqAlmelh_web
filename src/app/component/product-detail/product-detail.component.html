@@ -44,17 +44,28 @@
                 <td style="vertical-align: middle; ">{{item.name}}</td>
                 <td style="vertical-align: middle; ">{{item.price}} L.E</td>
                 <td style="vertical-align: middle; ">
-                    <div class="quantity">
-        <!--                <button class="btn btn-dark" (click)="addAmount(index)">+</button>
+                  <!--  <div class="quantity">
+               <button class="btn btn-dark" (click)="addAmount(index)">+</button>
                         <input class="form-control" type="number" (click)="detectChange()"  min="1">
-                        <button class="btn btn-dark" (click)="minsAmount(index)">-</button>-->
+                        <button class="btn btn-dark" (click)="minsAmount(index)">-</button>
                         <button class="btn btn-dark" (click)="quantity('max')">+</button>
-                        <input class="inputbox" text="text" value="{{productquantity}}">
+                        <input class="inputbox" text="number" value="{{productquantity}}">
                         <button class="btn btn-dark" (click)="quantity('min')">-</button>
                     </div>
+                   <div class="quantity">
+                        <button class="btn btn-dark" (click)="addAmount(index)">+</button>
+                        <input   class="form-control" type="number" (click)="detectChange()" [(ngModel)]="item.quantity" min="1">
+                        <button class="btn btn-dark" (click)="minsAmount(index)">-</button>
+                    </div>
                 </td>
-                <td style="vertical-align: middle; ">{{item.price * productquantity}} L.E</td>
-             
+                <td style="vertical-align: middle; ">{{item.price * item.quantity}} L.E</td>-->
+                    <div class="quantity">
+                        <button class="btn btn-dark" (click)="addAmount(index)">+</button>
+                        <input   class="form-control" type="number" (click)="detectChange()" [(ngModel)]="item.quantity "  min="1">
+                        <button class="btn btn-dark" (click)="minsAmount(index)">-</button>
+                    </div>
+                </td>
+                <td style="vertical-align: middle; ">{{item.price * item.quantity}} L.E</td>
             </tr>
         </tbody>
         <tfoot>

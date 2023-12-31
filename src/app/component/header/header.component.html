@@ -20,7 +20,7 @@
             <span style="margin-left: 10px;"></span>
             <i routerLink="cart-page" class="fal fa-shopping-cart" style="color: white; font-size: 18px my-20; cursor: pointer;">&nbsp;{{ cartitems }}</i>
             <span style="margin-left: 10px;"></span>
-            <i routerLink="/" class="fal fa-home" style="color: white; font-size: 18px my-20; cursor: pointer;"></i>
+            <i routerLink="pages" class="fal fa-home" style="color: white; font-size: 18px my-20; cursor: pointer;"></i>
             <span style="margin-left: 10px;"></span>
             <select name="" id="" (change)="translate($event)">
                 <option value="en">English</option>
@@ -33,21 +33,32 @@
               <div class="row">
                 <div class=" col-lg-1">
                   <div class="dropdown"*ngFor="let o of category" >
-                    <a  class="dropdown-toggle" (click)="toggleDropdown()"style="color: white; text-decoration: none; border-bottom: none;">
+                    
+                    <div (click)="isDropdownOpen = !isDropdownOpen">
+                     <a (click)="isDropdownOpen = !isDropdownOpen" class="dropdown-toggle" (click)="toggleDropdown()"style="color: white; text-decoration: none; border-bottom: none;">
                      {{o.name | translate}}
                     </a>
-                    <ul class="dropdown-menu"  [ngClass]="{'show': isDropdownOpen }">
-                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</a></li> 
+                  </div>
+
+                    <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}">
+                      <li *ngFor="let b of o.sub">
+                        <a class="dropdown-item" [routerLink]="'/category-detail/' + b.id" (click)="isDropdownOpen = false">{{b.name | translate}}</a>
+                      </li> 
                     </ul>
                   </div>
                 </div>
                 <div class="col-lg-2">
                   <div class="dropdown"*ngFor="let o of category3">
-                    <a  class="dropdown-toggle" (click)="toggleDropdown1()" style="color: white; text-decoration: none; border-bottom: none;">
-                      {{o.name | translate}}
-                    </a>
+
+                    <div (click)="isDropdownOpen1 = !isDropdownOpen1">
+                      <a (click)="isDropdownOpen1 = !isDropdownOpen1" class="dropdown-toggle" (click)="toggleDropdown1()" style="color: white; text-decoration: none; border-bottom: none;">
+                        {{o.name | translate}}
+                      </a>
+                    </div>
+                   
                     <ul class="dropdown-menu"  [ngClass]="{'show': isDropdownOpen1}">
-                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</a></li>
+                      <li *ngFor="let b of o.sub">
+                        <a class="dropdown-item" [routerLink]="'/category-detail/' + b.id" (click)="isDropdownOpen1 = false">{{b.name | translate}}</a></li>
                     </ul>
                   </div>
                 </div>
@@ -61,11 +72,15 @@
                   </div>
                 <div class="col">
                   <div class="dropdown"*ngFor="let o of category1" >
-                    <a  class="dropdown-toggle" (click)="toggleDropdown2()" style="color: white; text-decoration: none; border-bottom: none;">
+
+                    <div (click)="isDropdownOpen2 = !isDropdownOpen2">
+                    <a (click)="isDropdownOpen2 = !isDropdownOpen2" class="dropdown-toggle" (click)="toggleDropdown2()" style="color: white; text-decoration: none; border-bottom: none;">
                       {{o.name | translate}}
                     </a>
+                    </div>
+
                     <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen2}">
-                      <li *ngFor="let b of o.sub"><a class="dropdown-item" routerLink="/category-detail/{{b.id}}">{{b.name | translate}}</a></li>
+                      <li *ngFor="let b of o.sub"><a class="dropdown-item" [routerLink]="'/category-detail/' + b.id" (click)="isDropdownOpen2 = false">{{b.name | translate}}</a></li>
                     </ul>
                   </div>
                 </div>

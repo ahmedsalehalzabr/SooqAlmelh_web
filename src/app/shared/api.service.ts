@@ -4,6 +4,7 @@ import { favorite } from '../component/product-view/productmodal';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { ApiResponse, Category, PlatformModel, Product, PubgMobileModel, Region } from '../coupens/productmodal';
+import { CreateAccount, Login } from '../Auth/constant/model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,14 @@ export class ApiService {
  private apiUrl5 = 'https://api.sooqalmelh.app/api/Category';
  private apiUrl6 = 'https://api.sooqalmelh.app/api/Platform';
  private apiUrl7 = 'https://api.sooqalmelh.app/api/Region';
-  
+ private apiUrl8 = 'https://api.sooqalmelh.app/api/User/login/';
+ private apiUrl9 = 'https://api.sooqalmelh.app/api/User/regester/';
+ createUser(model:CreateAccount) {
+  return this.http.post<Product>(`${this.apiUrl9}`, model);
+}
+
+login(model:Login) {
+  return this.http.post<Product>(`${this.apiUrl8}`, model);}
  getCatalogsByFilter(param: any): Observable<Product> {
   return this.http.post<Product>(`${this.apiUrl}Catalog`, param);
 }
@@ -126,4 +134,5 @@ getcategorybyid2(id:string): Observable<Category> {
     this.cartitemlist!.data.products = [];
     this.productlist.next(this.cartitemlist?.data.products)
   }
+ 
 }

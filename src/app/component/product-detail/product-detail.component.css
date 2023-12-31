@@ -83,7 +83,7 @@ input.inputbox {
         }
   
         input.form-control {
-          width: 60px;
+          width:40px;
           margin: 0 10px;
         }
       }
@@ -112,4 +112,8 @@ input.inputbox {
     color: #155724;
     border-color: #c3e6cb;
     font-weight: bold;
+  }
+  input.form-control {
+    width:60px;
+    margin: 0 10px;
   }

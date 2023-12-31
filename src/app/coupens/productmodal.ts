@@ -69,6 +69,7 @@ interface Product2 {
   currencyName: string;
   currency: string;
   symbol: string;
+  quantity: number;
 }
 
 interface Attribute {

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ApiService } from 'src/app/shared/api.service';
-import { product } from '../product-view/productmodal';
 import { Category, Product } from 'src/app/coupens/productmodal';
 
 

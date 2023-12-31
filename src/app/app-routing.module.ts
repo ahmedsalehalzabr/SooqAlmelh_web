@@ -15,6 +15,8 @@ import { SettingsComponent } from './settings/settings.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { CategoryDetailsComponent } from './category-details/category-details/category-details.component';
 import { CategorySubdetailsComponent } from './category-subdetails/category-subdetails/category-subdetails.component';
+import { LoginComponent } from './Auth/commponant/login/login.component';
+import { SignupComponent } from './Auth/commponant/signup/signup.component';
 
 
 const routes: Routes = [
@@ -60,6 +62,15 @@ const routes: Routes = [
   {
     path:'settings', component:SettingsComponent
   },
+  {
+    path:'login', 
+    component:LoginComponent
+  },
+ 
+  {
+    path:'register', 
+    component:SignupComponent
+  }
 
 
 ];
